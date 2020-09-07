@@ -1,26 +1,14 @@
 import re
 
-from check50 import *
+import check50
+import check50.c
 
-class Hello(Checks):
+@check50.check()
+def exists():
+    """syntax.c exists"""
+    check50.exists("syntax.c")
 
-    @check()
-    def exists(self):
-        """syntax.c exists."""
-        self.require("syntax.c")
-
-    @check("exists")
-    def compiles(self):
-        """syntax.c compiles."""
-        self.spawn("clang -o syntax syntax.c").exit(0)
-
-    @check("compiles")
-    def prints_thisiscs50ap(self):
-        """prints "This is CS50AP!\\n" """
-        expected = "[Tt]his is CS50AP!?\n"
-        actual = self.spawn("./syntax").stdout()
-        if not re.match(expected, actual):
-            err = Error(Mismatch("This is CS50AP!\n", actual))
-            if re.match(expected[:-1], actual):
-                err.helpers = "Did you forget a newline (\"\\n\") at the end of your printf string?"
-            raise err
+@check50.check(compiles)
+def compiles():
+    """"syntax.c compiles"""
+    check50.c.compile("syntax.c", lcs50=True)
