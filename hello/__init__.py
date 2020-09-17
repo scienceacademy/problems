@@ -8,9 +8,9 @@ def exists():
 @check50.check(exists)
 def veronica():
     """responds to name Veronica."""
-    check50.run("python hello.py").stdin("Veronica").stdout("Veronica").exit()
+    check50.run("python hello.py").stdin("Veronica").stdout("Veronica")
 
 @check50.check(compiles)
 def brian():
     """responds to name Brian."""
-    check50.run("python hello.py").stdin("Brian").stdout("Brian").exit()
+    check50.run("python hello.py").stdin("Brian").stdout("Brian")
