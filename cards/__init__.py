@@ -3,11 +3,11 @@ import check50
 
 @check50.check()
 def exists():
-    """cash exists"""
-    check50.exists("cash.c")
+    """cards exists"""
+    check50.exists("cards.c")
 
 
 @check50.check(exists)
 def compiles():
-    """cash compiles"""
-    check50.c.compile("cash.c", lcs50=True)
+    """cards compiles"""
+    check50.c.compile("cards.c", lcs50=True)
