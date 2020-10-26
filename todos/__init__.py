@@ -20,3 +20,21 @@ def layout_style():
     page = open("templates/layout.html").read()
     if "<style>" not in page:
         raise check50.Failure(f"missing <style> tag in layout.html")
+
+
+@check50.check(exists)
+def tasks_del():
+    """tasks.html contains links to /del"""
+
+    page = open("templates/tasks.html").read()
+    if "/del" not in page:
+        raise check50.Failure(f"no links to /del in tasks.html")
+
+
+@check50.check(exists)
+def tasks_iter():
+    """tasks.html contains loop.index0 for iteration"""
+
+    page = open("templates/tasks.html").read()
+    if "loop.index0" not in page:
+        raise check50.Failure(f"not using iteration in tasks.html")
