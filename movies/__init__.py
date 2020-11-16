@@ -6,7 +6,7 @@ import sqlparse
 @check50.check()
 def exists():
     """SQL files exists"""
-    for i in range(1, 14):
+    for i in range(1, 12):
         check50.exists(f"{i}.sql")
     check50.include("movies.db")
 
@@ -34,7 +34,7 @@ def test3():
 @check50.check(exists)
 def test4():
     """4.sql produces correct result"""
-    check_single_cell(run_query("4.sql"), "2")
+    check_single_cell(run_query("4.sql"), "12")
 
 @check50.check(exists)
 def test5():
@@ -54,7 +54,7 @@ def test5():
 @check50.check(exists)
 def test6():
     """6.sql produces correct result"""
-    check_single_cell(run_query("6.sql"), "7.74")
+    check_single_cell(run_query("6.sql"), "6.28")
 
 @check50.check(exists)
 def test7():
@@ -74,46 +74,41 @@ def test7():
 def test8():
     """8.sql produces correct result"""
     check_single_col(run_query("8.sql"),
-        {"Don Rickles", "Jim Varney", "Tom Hanks", "Tim Allen"},
+        {"Jessica Chastain", "Kristen Wiig", "Kate Mara", "Matt Damon"},
         ordered=False)
 
 @check50.check(exists)
 def test9():
     """9.sql produces correct result"""
     check_single_col(run_query("9.sql"),
-        ["Craig T. Nelson", "Richard Griffifths", "Samuel L. Jackson", "Holly Hunter",
-         "Jason Lee", "Rupert Grint", "Daniel Radcliffe", "Emma Watson"],
+        ["42", "Black Panther", "Marshall", "Get on Up", "Draft Day"],
         ordered=True)
 
 @check50.check(exists)
 def test10():
     """10.sql produces correct result"""
     check_single_col(run_query("10.sql"),
-        {"Christopher Nolan", "Frank Darabont", "Yimou Zhang"},
-        ordered=False)
-
-@check50.check(exists)
-def test11():
-    """11.sql produces correct result"""
-    check_single_col(run_query("11.sql"),
-        ["42", "Black Panther", "Marshall", "Get on Up", "Draft Day"],
-        ordered=True)
-
-@check50.check(exists)
-def test12():
-    """12.sql produces correct result"""
-    check_single_col(run_query("12.sql"),
         {"Corpse Bride", "Charlie and the Chocolate Factory",
          "Alice in Wonderland", "Alice Through the Looking Glass"},
         ordered=False)
 
 @check50.check(exists)
-def test13():
-    """13.sql produces correct result"""
-    check_single_col(run_query("13.sql"),
-        {"Bill Paxton", "Gary Sinise", "James McAvoy", "Jennifer Lawrence",
-         "Tom Cruise", "Michael Fassbender", "Tom Hanks"},
-        ordered=False)
+def test11():
+    """11.sql produces correct result"""
+    check_double_col(run_query("11.sql"),
+        [{"8.8", "Spirited Away"},
+         {"8.4", "Princess Mononoke"},
+         {"8.2", "My Neighbor Totoro"},
+         {"8.2", "Howl's Moving Castle"},
+         {"8.1", "Nausicaä of the Valley of the Wind"},
+         {"8.0", "Castle in the Sky"},
+         {"7.9", "Kiki's Delivery Service"},
+         {"7.8", "Porco Rosso"},
+         {"7.8", "The Wind Rises"},
+         {"7.7", "Lupin the 3rd: Castle of Cagliostro"},
+         {"7.7", "Ponyo"},
+         {"7.6", "Conan the Future Boy: The Big Giant Robot's Resurrection"}],
+        ordered=True)
 
 def run_query(filename):
     try:
