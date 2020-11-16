@@ -27,6 +27,59 @@ CREATE TABLE ratings (
 );
 
 -- Movies and Ratings
+INSERT INTO movies (title, year) VALUES ("The Martian", 2015);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "The Martian"), 8.0, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Spirited Away", 2001);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Spirited Away"), 8.6, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Princess Mononoke", 1997);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Princess Mononoke"), 8.4, 218512);
+
+INSERT INTO movies (title, year) VALUES ("My Neighbor Totoro", 1988);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "My Neighbor Totoro"), 8.2, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Howl's Moving Castle", 2004);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Howl's Moving Castle"), 8.2, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Nausicaä of the Valley of the Wind", 1984);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Nausicaä of the Valley of the Wind"), 8.1, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Castle in the Sky", 1986);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Castle in the Sky"), 8.0, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Kiki's Delivery Service", 1989);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Kiki's Delivery Service"), 7.9, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Porco Rosso", 1992);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Porco Rosso"), 7.8, 218512);
+
+INSERT INTO movies (title, year) VALUES ("The Wind Rises", 2013);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "The Wind Rises"), 7.8, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Lupin the 3rd: Castle of Cagliostro", 1979);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Lupin the 3rd: Castle of Cagliostro"), 7.7, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Ponyo", 2008);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Ponyo"), 7.7, 218512);
+
+INSERT INTO movies (title, year) VALUES ("Conan the Future Boy: The Big Giant Robot's Resurrection", 1984);
+INSERT INTO ratings (movie_id, rating, votes) VALUES
+    ((SELECT id FROM movies WHERE title = "Conan the Future Boy: The Big Giant Robot's Resurrection"), 7.6, 218512);
+
+
 INSERT INTO movies (title, year) VALUES ("A Few Good Men", 1992);
 INSERT INTO ratings (movie_id, rating, votes) VALUES
     ((SELECT id FROM movies WHERE title = "A Few Good Men"), 7.7, 218512);
@@ -230,6 +283,11 @@ INSERT INTO people (name, birth) VALUES ("Craig T. Nelson", 1944);
 INSERT INTO people (name, birth) VALUES ("Richard Griffifths", 1947);
 INSERT INTO people (name, birth) VALUES ("Rupert Grint", 1988);
 INSERT INTO people (name, birth) VALUES ("Daniel Radcliffe", 1989);
+INSERT INTO people (name, birth) VALUES ("Matt Damon", 1970);
+INSERT INTO people (name, birth) VALUES ("Kate Mara", 1983);
+INSERT INTO people (name, birth) VALUES ("Kristen Wiig", 1973);
+INSERT INTO people (name, birth) VALUES ("Jessica Chastain", 1977);
+INSERT INTO people (name, birth) VALUES ("Hayao Miyazaki", 1941);
 
 -- Stars
 INSERT INTO stars (person_id, movie_id) VALUES (
@@ -388,6 +446,19 @@ INSERT INTO stars (person_id, movie_id) VALUES (
 INSERT INTO stars (person_id, movie_id) VALUES (
     (SELECT id FROM people WHERE name = "Emma Watson"),
     (SELECT id FROM movies WHERE title = "Harry Potter and the Prisoner of Azkaban"));
+INSERT INTO stars (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Matt Damon"),
+    (SELECT id FROM movies WHERE title = "The Martian"));
+INSERT INTO stars (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Kate Mara"),
+    (SELECT id FROM movies WHERE title = "The Martian"));
+INSERT INTO stars (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Kristen Wiig"),
+    (SELECT id FROM movies WHERE title = "The Martian"));
+INSERT INTO stars (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Jessica Chastain"),
+    (SELECT id FROM movies WHERE title = "The Martian"));
+
 
 -- Directors
 INSERT INTO directors (person_id, movie_id) VALUES (
@@ -402,3 +473,39 @@ INSERT INTO directors (person_id, movie_id) VALUES (
 INSERT INTO directors (person_id, movie_id) VALUES (
     (SELECT id FROM people WHERE name = "Frank Darabont"),
     (SELECT id FROM movies WHERE title = "The Shawshank Redemption"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Spirited Away"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Princess Mononoke"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "My Neighbor Totoro"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Howl's Moving Castle"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Nausicaä of the Valley of the Wind"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Castle in the Sky"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Kiki's Delivery Service"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Porco Rosso"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "The Wind Rises"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Lupin the 3rd: Castle of Cagliostro"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Ponyo"));
+INSERT INTO directors (person_id, movie_id) VALUES (
+    (SELECT id FROM people WHERE name = "Hayao Miyazaki"),
+    (SELECT id FROM movies WHERE title = "Conan the Future Boy: The Big Giant Robot's Resurrection"));

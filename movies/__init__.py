@@ -34,7 +34,7 @@ def test3():
 @check50.check(exists)
 def test4():
     """4.sql produces correct result"""
-    check_single_cell(run_query("4.sql"), "12")
+    check_single_cell(run_query("4.sql"), "2")
 
 @check50.check(exists)
 def test5():
@@ -54,7 +54,7 @@ def test5():
 @check50.check(exists)
 def test6():
     """6.sql produces correct result"""
-    check_single_cell(run_query("6.sql"), "6.28")
+    check_single_cell(run_query("6.sql"), "7.74")
 
 @check50.check(exists)
 def test7():
