@@ -14,7 +14,7 @@ def exists():
 def test1():
     """1.sql produces correct result"""
     check_single_col(run_query("1.sql"),
-        {"Iron Man", "The Dark Knight", "Slumdog Millionaire", "Kung Fu Panda"},
+        {"Iron Man", "The Dark Knight", "Slumdog Millionaire", "Kung Fu Panda", "Ponyo"},
         ordered=False)
 
 @check50.check(exists)
