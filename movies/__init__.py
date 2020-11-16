@@ -96,7 +96,7 @@ def test10():
 def test11():
     """11.sql produces correct result"""
     check_double_col(run_query("11.sql"),
-        [{"8.8", "Spirited Away"},
+        [{"8.6", "Spirited Away"},
          {"8.4", "Princess Mononoke"},
          {"8.2", "My Neighbor Totoro"},
          {"8.2", "Howl's Moving Castle"},
