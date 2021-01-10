@@ -1,7 +1,6 @@
 import check50
 import check50.flask
 
-
 @check50.check()
 def exists(self):
     """application.py exists"""
