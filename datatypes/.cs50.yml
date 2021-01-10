@@ -1,7 +1,7 @@
 check50:
   files: &check50_files
     - !exclude "*"
-    - !require syntax.py
+    - !require datatypes.py
 
 submit50:
   files: *check50_files
