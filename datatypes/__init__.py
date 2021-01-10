@@ -8,16 +8,16 @@ def exists():
 
 @check50.check(exists)
 def check_get_int():
-    """datatypes.py contains get_ing=t"""
+    """datatypes.py contains int(input("""
 
     app = open("datatypes.py").read()
-    if 'get_int(' not in app:
-        raise check50.Failure(f"missing get_int() in datatypes.py")
+    if 'int(input(' not in app:
+        raise check50.Failure(f"You need to convert input to an int")
 
 @check50.check(exists)
 def check_get_float():
-    """datatypes.py contains get_float"""
+    """datatypes.py contains float(input("""
 
     app = open("datatypes.py").read()
-    if 'get_float(' not in app:
-        raise check50.Failure(f"missing get_float() in datatypes.py")
+    if 'float(input(' not in app:
+        raise check50.Failure(f"You need to convert input to a float")
