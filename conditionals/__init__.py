@@ -27,5 +27,5 @@ def testC():
 @check50.check(exists)
 def testA():
     """responds to input of 65."""
-    check50.run("python3 grades.py").stdin("65").stdout("You got n D!").exit(0)
+    check50.run("python3 grades.py").stdin("65").stdout("You got a D!").exit(0)
 
