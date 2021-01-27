@@ -21,5 +21,5 @@ def testB():
 
 @check50.check(exists)
 def testC():
-    """string.py outputs correctly with 'alexandra'."""
+    """string.py outputs correctly with 'alexandria'."""
     check50.run("python3 string.py").stdin("alexandria").stdout("5").exit(0)
