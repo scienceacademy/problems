@@ -48,7 +48,10 @@ def test_even2():
 @check50.check(exists)
 def test_odd():
     """odd_even.py responds to input of 11."""
-    check50.run("python3 odd_even.py").stdin("11").stdout("Odd", regex=False).exit(0)
+    # check50.run("python3 odd_even.py").stdin("11").stdout("Odd", regex=False).exit(0)
+    actual = check50.run("python3 odd_even.py").stdin("11").stdout()
+    if "Even" in actual:
+        raise check50.Mismatch("Odd", actual)
 
 
 @check50.check(exists)
