@@ -13,13 +13,13 @@ def testA():
     check50.run("python3 list.py").stdout("[4, 49, 16, 25, 81]").exit(0)
 
 
-# @check50.check(exists)
-# def testB():
-#     """string.py outputs correctly with 'aaron'."""
-#     check50.run("python3 string.py").stdin("aaron").stdout("3").exit(0)
+@check50.check(exists)
+def testB():
+    """string.py outputs correctly with 'aaron'."""
+    check50.run("python3 string.py").stdin("aaron").stdout("3").exit(0)
 
 
-# @check50.check(exists)
-# def testC():
-#     """string.py outputs correctly with 'alexandra'."""
-#     check50.run("python3 string.py").stdin("alexandria").stdout("5").exit(0)
+@check50.check(exists)
+def testC():
+    """string.py outputs correctly with 'alexandra'."""
+    check50.run("python3 string.py").stdin("alexandria").stdout("5").exit(0)
