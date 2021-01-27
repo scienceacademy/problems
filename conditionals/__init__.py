@@ -40,12 +40,6 @@ def test_even():
 
 
 @check50.check(exists)
-def test_even2():
-    """odd_even.py responds to input of 7."""
-    check50.run("python3 odd_even.py").stdin("7").stdout("Odd", regex=False).exit(0)
-
-
-@check50.check(exists)
 def test_odd():
     """odd_even.py responds to input of 11."""
     # check50.run("python3 odd_even.py").stdin("11").stdout("Odd", regex=False).exit(0)
