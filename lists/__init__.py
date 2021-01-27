@@ -16,10 +16,10 @@ def testA():
 @check50.check(exists)
 def testB():
     """string.py outputs correctly with 'aaron'."""
-    check50.run("python3 list.py").stdin("aaron").stdout("3").exit(0)
+    check50.run("python3 string.py").stdin("aaron").stdout("3").exit(0)
 
 
 @check50.check(exists)
 def testC():
     """string.py outputs correctly with 'alexandra'."""
-    check50.run("python3 list.py").stdin("alexandra").stdout("4").exit(0)
+    check50.run("python3 string.py").stdin("alexandra").stdout("4").exit(0)
