@@ -2,7 +2,7 @@ check50:
   files: &check50_files
     - !exclude "*"
     - !require list.py
-    - !require string.py
+    - !require vowels.py
 
 submit50:
   files: *check50_files
