@@ -37,6 +37,8 @@ def test_even():
     actual = check50.run("python3 odd_even.py").stdin("8").stdout()
     if "Odd" in actual:
         raise check50.Mismatch("Even", actual)
+    elif "Even" not in actual:
+        raise check50.Failure("Expected 'Even'")
 
 
 @check50.check(exists)
@@ -46,6 +48,8 @@ def test_odd():
     actual = check50.run("python3 odd_even.py").stdin("11").stdout()
     if "Even" in actual:
         raise check50.Mismatch("Odd", actual)
+    elif "Odd" not in actual:
+        raise check50.Failure("Expected 'Odd'")
 
 
 @check50.check(exists)
