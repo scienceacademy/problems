@@ -1,0 +1,10 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require p1.py
+    - !require p2.py
+    - !require p3.py
+    - !require p4.py
+
+submit50:
+  files: *check50_files
