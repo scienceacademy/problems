@@ -2,7 +2,7 @@ import check50
 
 @check50.check()
 def exists():
-    """list.py and string.py exist."""
+    """list.py and vowels.py exist."""
     check50.exists("list.py")
     check50.exists("vowels.py")
 
