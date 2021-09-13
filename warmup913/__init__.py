@@ -16,7 +16,7 @@ def compiles():
 @check50.check(compiles)
 def reverse():
     """Reverses a string"""
-    check50.run("./reverse").stdin("Hello").stdout("olleh\n").exit()
+    check50.run("./reverse").stdin("Hello").stdout("olleH\n").exit()
 
 
 @check50.check(compiles)
@@ -26,5 +26,5 @@ def pal1():
 
 @check50.check(compiles)
 def pal2():
-    """Checks tacocat"""
+    """Checks not a palindrome"""
     check50.run("./palindrome").stdin("This is not a palindrome").stdout("NOT PALINDROME\n").exit()
