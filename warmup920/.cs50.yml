@@ -1,0 +1,8 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require add2.c
+    - !require sum2.c
+
+submit50:
+  files: *check50_files
