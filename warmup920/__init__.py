@@ -21,7 +21,7 @@ def add1():
 @check50.check(compiles)
 def add2():
     """checks number of arguments"""
-    check50.run("./add2").stdout("Wrong number of arguments\n").exit()
+    check50.run("./add2").stdout("Error\n").exit()
 
 @check50.check(compiles)
 def sum1():
@@ -30,5 +30,5 @@ def sum1():
 
 @check50.check(compiles)
 def sum2():
-    """Error with no arguments"""
-    check50.run("./sum2").stdout("Wrong number of arguments\n").exit()
+    """0 with no arguments"""
+    check50.run("./sum2").stdout("0\n").exit()
