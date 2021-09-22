@@ -59,19 +59,19 @@ def handles_no_argv():
 @check50.check(compiles)
 def handles_invalid_length():
     """handles invalid key length"""
-    check50.run("./substitution QTXDGMKIPV").exit(1)
+    check50.run("./substitution QTXDGMKIPV").exit(2)
 
 @check50.check(compiles)
 def handles_invalid_key_chars():
     """handles invalid characters in key"""
-    check50.run("./substitution ZWGKPMJRYISHFEXQON2DLUACVT").exit(1)
+    check50.run("./substitution ZWGKPMJRYISHFEXQON2DLUACVT").exit(2)
 
 @check50.check(compiles)
 def handles_duplicate_chars():
     """handles duplicate characters in key"""
-    check50.run("./substitution YFDTSMPBVIEERGHWONUAKLQXCZ").exit(1)
-    
+    check50.run("./substitution YFDTSMPBVIEERGHWONUAKLQXCZ").exit(2)
+
 @check50.check(compiles)
 def handles_multiple_duplicate_chars():
     """handles multiple duplicate characters in key"""
-    check50.run("./substitution BBCCEFGHIJKLMNOPQRSTUVWXYZ").exit(1)
+    check50.run("./substitution BBCCEFGHIJKLMNOPQRSTUVWXYZ").exit(2)
