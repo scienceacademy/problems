@@ -20,7 +20,7 @@ def sorts():
 
     check50.log("checking that sorts are classified correctly...")
 
-    expected = ["sort1 uses:\s*bubble", "sort2 uses:\s*merge", "sort3 uses:\s*selection"]
+    expected = ["sort1 uses:\s*selection", "sort2 uses:\s*merge", "sort3 uses:\s*bubble"]
     actual = open("answers.txt", "r").read().lower()
 
     for e in expected:
