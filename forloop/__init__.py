@@ -9,7 +9,7 @@ def exists():
 
 @check50.check(exists)
 def result():
-    """result is 55"""
+    """result is 110"""
     check50.run("python3 forloop.py").stdout("110").exit(0)
 
 
