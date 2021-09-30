@@ -17,6 +17,6 @@ def test5():
     check50.run("./factorial").stdin("5").stdout("120").exit(0)
 
 @check50.check(compiles)
-def test5():
+def test10():
     """10! is 120"""
     check50.run("./factorial").stdin("10").stdout("3628800").exit(0)
