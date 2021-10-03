@@ -15,6 +15,6 @@ def testA():
 
 @check50.check(exists)
 def testB():
-    """odds.py outputs correctly."""
+    """negatives.py outputs correctly."""
     check50.run("python3 negatives.py").stdout("3").exit(0)
 
