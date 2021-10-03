@@ -4,7 +4,7 @@ import check50
 def exists():
     """smallest.py and odds.py exist."""
     check50.exists("smallest.py")
-    check50.exists("odds.py")
+    check50.exists("negatives.py")
 
 
 @check50.check(exists)
@@ -16,5 +16,5 @@ def testA():
 @check50.check(exists)
 def testB():
     """odds.py outputs correctly."""
-    check50.run("python3 odds.py").stdout("4").exit(0)
+    check50.run("python3 negatives.py").stdout("3").exit(0)
 
