@@ -11,7 +11,7 @@ def exists():
 @check50.check(exists)
 def test_p1():
     """comp1.py produces the correct output."""
-    check50.run("python3 comp1.py").stdin("hello world").stdout("10 letter(s)\n").exit(0)
+    check50.run("python3 comp1.py").stdin("hello world").stdout("10 letter(s)").exit(0)
 
 
 @check50.check(exists)
