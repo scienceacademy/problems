@@ -1,7 +1,7 @@
 submit50:
   files: &submit50_files
     - !exclude "*"
-    - !include "*.py"
+    - !exclude "*.py"
     - !require readability.py
 
 check50:
