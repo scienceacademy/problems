@@ -14,7 +14,7 @@ def compiles():
 @check50.check(compiles)
 def one():
     """ Works with seed 1234 """
-    expected = "5 6 8 7 1 9 0 3 2 4\n"
+    expected = "5 6 8 7 1 9 0 3 2 4"
     actual = check50.run("./shuffle 1234").stdout()
     if expected != actual:
         help = "Common mistake - read the pseudocode carefully."
