@@ -18,6 +18,6 @@ def one():
     actual = check50.run("./shuffle 1234").stdout()
     if actual != expected:
         help = None
-        if actual == "6 2 5 4 1 9 7 8 3 0"
+        if actual == "6 2 5 4 1 9 7 8 3 0":
             help = "Common mistake - read the pseudocode carefully."
         raise check50.Mismatch(expected, actual, help=help)
