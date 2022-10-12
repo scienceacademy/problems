@@ -14,10 +14,10 @@ def compiles():
 @check50.check(compiles)
 def one():
     """ Works with seed 1234 """
-    expected = "5 6 8 7 1 9 0 3 2 4 "
+    expected = "5 6 8 7 1 9 0 3 2 4 \n"
     actual = check50.run("./shuffle 1234").stdout()
     if actual != expected:
         help = None
-        if actual == "6 2 5 4 1 9 7 8 3 0 ":
+        if actual == "6 2 5 4 1 9 7 8 3 0 \n":
             help = "Common mistake - read the pseudocode carefully."
         raise check50.Mismatch(expected, actual, help=help)
