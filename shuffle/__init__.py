@@ -16,6 +16,8 @@ def one():
     """ Works with seed 1234 """
     expected = "5 6 8 7 1 9 0 3 2 4"
     actual = check50.run("./shuffle 1234").stdout()
-    if expected != actual:
-        help = "Common mistake - read the pseudocode carefully."
+    if actual != expected:
+        help = None
+        if actual == "6 2 5 4 1 9 7 8 3 0"
+            help = "Common mistake - read the pseudocode carefully."
         raise check50.Mismatch(expected, actual, help=help)
