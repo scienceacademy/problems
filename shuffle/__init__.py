@@ -20,4 +20,6 @@ def one():
         help = None
         if actual == "6 2 5 4 1 9 7 8 3 0 \n":
             help = "Common mistake - read the pseudocode carefully."
+        if actual == "7 4 9 0 1 3 5 6 2 8 \n":
+            help = "Your random number selection is not correct."
         raise check50.Mismatch(expected, actual, help=help)
