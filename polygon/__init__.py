@@ -6,3 +6,6 @@ def exists():
     """Files exist."""
     check50.exists("polygon.py")
 
+@check50.check(exists)
+def submitted():
+    """submitted"""
