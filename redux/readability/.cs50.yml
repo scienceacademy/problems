@@ -1,8 +1,0 @@
-submit50:
-  files: &submit50_files
-    - !exclude "*"
-    - !exclude "*.py"
-    - !require readability.py
-
-check50:
-  files: *submit50_files
