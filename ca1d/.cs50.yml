@@ -1,0 +1,11 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require ca.py
+    - !require 1.png
+    - !require 2.png
+    - !require 3.png
+    - !require ca.txt
+
+submit50:
+  files: *check50_files
