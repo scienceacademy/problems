@@ -1,6 +1,6 @@
 check50:
   files: &check50_files
-    - !require application.py
+    - !require app.py
 
 submit50:
   files: *check50_files
