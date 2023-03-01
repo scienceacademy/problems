@@ -5,7 +5,7 @@ import check50.c
 def exists():
     """Files exist."""
     check50.exists("forest.py")
-    check50.exists("forest.png")
+    check50.exists("forest.txt")
 
 @check50.check(exists)
 def submitted():
