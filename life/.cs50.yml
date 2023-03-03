@@ -1,0 +1,8 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require life.py
+    - !require life.txt
+
+submit50:
+  files: *check50_files
