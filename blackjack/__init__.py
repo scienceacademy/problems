@@ -17,7 +17,7 @@ def hand2():
 
 @check50.check(exists)
 def hand3():
-    """w cards with a total < 21"""
+    """2 cards with a total < 21"""
     check50.run("python blackjack_score.py 4C 5H").stdout("9")
 
 @check50.check(exists)
