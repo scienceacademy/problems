@@ -4,6 +4,7 @@ import check50
 def exists():
     """blackjack_score.py exists."""
     check50.exists("blackjack_score.py")
+    check50.exists("cards.py")
 
 @check50.check(exists)
 def hand1():
