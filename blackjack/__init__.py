@@ -23,13 +23,13 @@ def hand3():
 
 @check50.check(exists)
 def hand4():
-    """2 cards with one ace, total > 21 if ace is 11"""
-    check50.run("python blackjack_score.py 10S AH").stdout("11")
+    """2 cards with one ace, total = 21 if ace is 11"""
+    check50.run("python blackjack_score.py 10S AH").stdout("21")
 
 @check50.check(exists)
 def hand5():
     """2 cards with 2 aces, one reduced to 1"""
-    check50.run("python blackjack_score.py AC AS 8D").stdout("19")
+    check50.run("python blackjack_score.py AC AS 8D").stdout("20")
 
 @check50.check(exists)
 def hand6():
