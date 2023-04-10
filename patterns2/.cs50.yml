@@ -1,0 +1,9 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require patterns4.py
+    - !require patterns5.py
+    - !require patterns6.py
+
+submit50:
+  files: *check50_files
