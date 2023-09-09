@@ -50,4 +50,4 @@ def check_password(password: str, valid: bool):
     if valid:
         program.stdout("Your password is valid!")
     else:
-        program.stdout("Your password needs at least one uppercase letter, lowercase letter, number and symbol")
+        program.stdout("Your password needs at least one uppercase letter, lowercase letter, number, and symbol")
