@@ -1,5 +1,6 @@
 import check50
 
 @check50.check()
-def submitted():
-    """Submitted"""
+def exists():
+    """vp.c exists"""
+    check50.exists("vp.c")
