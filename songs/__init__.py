@@ -69,8 +69,9 @@ def run_query(filename):
         with open(filename) as f:
             query = f.read().strip()
             query = sqlparse.format(query, strip_comments=True).strip()
+            query = query.replace(";", " LIMIT 10";)
         db = SQL("sqlite:///songs.db")
-        result = db.execute(query + " LIMIT 10")
+        result = db.execute(query)
         return result
     except Exception as e:
         raise check50.Failure(f"Error when executing query: {str(e)}")
