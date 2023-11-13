@@ -30,7 +30,7 @@ def test2():
 def test3():
     """3.sql produces correct result"""
     check_single_col(run_query("3.sql"),
-        ["Agudo M��gi", "White Christmas", "The Christmas Song (Merry Christmas To You) - Remastered 1999", "Let It Snow! Let It Snow! Let It Snow!", "A Holly Jolly Christmas - Single Version", "Jingle Bell Rock", "Jingle Bells - Remastered 1999", "Rockin' Around The Christmas Tree", "It's Beginning to Look a Lot Like Christmas (with Mitchell Ayres & His Orchestra)", "Run Rudolph Run - Single Version"],
+        ["Agudo M��gi", "White Christmas", "The Christmas Song (Merry Christmas To You) - Remastered 1999", "Let It Snow! Let It Snow! Let It Snow!", "A Holly Jolly Christmas - Single Version"],
         ordered=True)
 
 @check50.check(exists)
