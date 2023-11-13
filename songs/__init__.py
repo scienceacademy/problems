@@ -61,17 +61,17 @@ def test7():
 def test8():
     """8.sql produces correct result"""
     check_double_col(run_query("8.sql"),
-        [{"G", 7},
-        {"", 5},
-        {"F",4},
-        {"E",4},
-        {"D",4},
-        {"G#",3},
-        {"F#",3},
-        {"A",2},
-        {"B",1},
-        {"A#",1}],
-        ordered=False)
+        [{"G", "7"},
+        {"", "5"},
+        {"F", "4"},
+        {"E", "4"},
+        {"D", "4"},
+        {"G#", "3"},
+        {"F#", "3"},
+        {"A", "2"},
+        {"B", "1"},
+        {"A#", "1"}],
+        ordered=True)
 
 def run_query(filename):
     try:
