@@ -21,7 +21,7 @@ def test1():
 @check50.check(exists)
 def test2():
     """2.sql produces correct result"""
-    solution = ["White Christmas", "It's the Most Wonderful Time of the Year", "Lift Me Up - From Black Panther: Wakanda Forever - Music From and Inspired By", "Dawn FM", "Starry Eyes", "I'm Tired - From "'Euphoria'" An Original HBO Series", "traitor", "Happier Than Ever", "Notion", "Down Under (feat. Colin Hay)"]
+    solution = ["White Christmas", "It's the Most Wonderful Time of the Year", "Lift Me Up - From Black Panther: Wakanda Forever - Music From and Inspired By", "Dawn FM", "Starry Eyes", "I'm Tired - From \"Euphoria\" An Original HBO Series", "traitor", "Happier Than Ever", "Notion", "Down Under (feat. Colin Hay)"]
     check_single_col(run_query("2.sql"),
         solution,
         ordered=True)
@@ -37,31 +37,40 @@ def test3():
 def test4():
     """4.sql produces correct result"""
     check_single_col(run_query("4.sql"),
-            {"Dura", "Me Niego", "Feel It Still", "1, 2, 3 (feat. Jason Derulo & De La Ghetto)", "Criminal"},
+            {"Seven (feat. Latto) (Explicit Ver.)", "SABOR FRESA", "Calm Down (with Selena Gomez)", "TQM", "BABY HELLO", "Cold Heart - PNAU Remix", "VAGABUNDO", "QUEMA", "Mi Bello Angel", "PRC"},
         ordered=False)
 
 @check50.check(exists)
 def test5():
     """5.sql produces correct result"""
-    check_single_cell(run_query("5.sql"), "0.65906", floating=True)
+    check_single_cell(run_query("5.sql"), "64.27415", floating=True)
 
 @check50.check(exists)
 def test6():
     """6.sql produces correct result"""
     check_single_col(run_query("6.sql"),
-        {"rockstar (feat. 21 Savage)", "Psycho (feat. Ty Dolla $ign)", "Better Now", "I Fall Apart", "Candy Paint", "Congratulations"},
+        {"Circles", "Chemical", "Overdrive"},
         ordered=False)
 
 @check50.check(exists)
 def test7():
     """7.sql produces correct result"""
-    check_single_cell(run_query("7.sql"), "0.6375", floating=True)
+    check_single_cell(run_query("7.sql"), "Blinding Lights")
 
 @check50.check(exists)
 def test8():
     """8.sql produces correct result"""
-    check_single_col(run_query("8.sql"),
-{"rockstar (feat. 21 Savage)",  "Psycho (feat. Ty Dolla $ign)", "Girls Like You (feat. Cardi B)", "Look Alive (feat. Drake)", "These Days (feat. Jess Glynne, Macklemore & Dan Caplen)", "Meant to Be (feat. Florida Georgia Line)", "Taste (feat. Offset)", "Solo (feat. Demi Lovato)", "River (feat. Ed Sheeran)", "Finesse (Remix) [feat. Cardi B]", "Freaky Friday (feat. Chris Brown)", "FEFE (feat. Nicki Minaj & Murda Beatz)", "Body (feat. brando)", "Fuck Love (feat. Trippie Redd)", "Dejala que vuelva (feat. Manuel Turizo)", "1, 2, 3 (feat. Jason Derulo & De La Ghetto)", "Corazon (feat. Nego do Borel)", "I Miss You (feat. Julia Michaels)"},
+    check_double_col(run_query("8.sql"),
+        [{"G", 7},
+        {"", 5},
+        {"F",4},
+        {"E",4},
+        {"D",4},
+        {"G#",3},
+        {"F#",3},
+        {"A",2},
+        {"B",1},
+        {"A#",1}],
         ordered=False)
 
 def run_query(filename):
