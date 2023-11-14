@@ -4,3 +4,4 @@ import check50
 def exists():
     """vp.py exists"""
     check50.exists("vp.py")
+

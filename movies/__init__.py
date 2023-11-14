@@ -87,7 +87,7 @@ def test9():
 @check50.check(exists)
 def test10():
     """10.sql produces correct result"""
-    check_double_col(run_query("11.sql"),
+    check_double_col(run_query("10.sql"),
         [{"8.6", "Spirited Away"},
          {"8.4", "Princess Mononoke"},
          {"8.2", "My Neighbor Totoro"},
@@ -105,7 +105,7 @@ def test10():
 @check50.check(exists)
 def test11():
     """11.sql produces correct result"""
-    check_single_col(run_query("10.sql"),
+    check_single_col(run_query("11.sql"),
         {"Corpse Bride", "Charlie and the Chocolate Factory",
          "Alice in Wonderland", "Alice Through the Looking Glass"},
         ordered=False)
