@@ -87,14 +87,6 @@ def test9():
 @check50.check(exists)
 def test10():
     """10.sql produces correct result"""
-    check_single_col(run_query("10.sql"),
-        {"Corpse Bride", "Charlie and the Chocolate Factory",
-         "Alice in Wonderland", "Alice Through the Looking Glass"},
-        ordered=False)
-
-@check50.check(exists)
-def test11():
-    """11.sql produces correct result"""
     check_double_col(run_query("11.sql"),
         [{"8.6", "Spirited Away"},
          {"8.4", "Princess Mononoke"},
@@ -109,6 +101,14 @@ def test11():
          {"7.7", "Ponyo"},
          {"7.6", "Conan the Future Boy: The Big Giant Robot's Resurrection"}],
         ordered=True)
+
+@check50.check(exists)
+def test11():
+    """11.sql produces correct result"""
+    check_single_col(run_query("10.sql"),
+        {"Corpse Bride", "Charlie and the Chocolate Factory",
+         "Alice in Wonderland", "Alice Through the Looking Glass"},
+        ordered=False)
 
 def run_query(filename):
     try:
