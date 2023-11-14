@@ -1,7 +1,7 @@
 check50:
   files: &check50_files
     - !exclude "*"
-    - !require vp.c
+    - !require vp.py
 
 submit50:
   files: *check50_files
