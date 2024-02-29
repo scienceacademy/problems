@@ -1,7 +1,8 @@
 check50:
   files: &check50_files
     - !exclude "*"
-    - !require cash.py
+    - !require pig.py
+    - !require pig.txt
 
 submit50:
   files: *check50_files

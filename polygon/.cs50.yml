@@ -1,0 +1,11 @@
+check50:
+  files: &check50_files
+<<<<<<< HEAD:todos/.cs50.yml
+    - !require app.py
+=======
+    - !exclude "*"
+    - !require polygon.py
+>>>>>>> 4a967654228699562c64bb623a4c41ec50dcaec3:polygon/.cs50.yml
+
+submit50:
+  files: *check50_files
