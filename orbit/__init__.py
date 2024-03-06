@@ -4,6 +4,7 @@ import check50
 def exists():
     """Files exist."""
     check50.exists("orbit.py")
+    check50.exists("orbit.txt")
 
 @check50.check(exists)
 def submitted():
