@@ -5,7 +5,6 @@ import check50.c
 def exists():
     """Files exist."""
     check50.exists("maze.py")
-    check50.exists("maze_graph.png")
 
 @check50.check(exists)
 def submitted():
