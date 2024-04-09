@@ -1,0 +1,8 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !require maze_solve.py
+    - !require maze_solve.txt
+
+submit50:
+  files: *check50_files
