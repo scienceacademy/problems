@@ -34,5 +34,5 @@ def test2():
 
 @check50.check(compiles)
 def test3():
-    """Check for not non alphabetic"""
+    """Check for non alphabetic"""
     check50.run("./anagram").stdin("apple").stdin("color8").stdout("Alphabetic characters only.").exit(1)
