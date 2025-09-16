@@ -20,12 +20,12 @@ def encrypt1():
 
 @check50.check(compiles)
 def encrypt2():
-    """encrypts "This is a secret." as "" using key "hello" """
+    """encrypts "This is a secret." as "haeTsristseic" using key "hello" """
     check50.run("./column hello").stdin("This is a secret.").stdout("ciphertext: haeTsristseic\n").exit(0)
 
 @check50.check(compiles)
 def encrypt3():
-    """encrypts "This is a secret." as "" using key "heLlo" """
+    """encrypts "This is a secret." as "haeTsristseic" using key "heLlo" """
     check50.run("./column hello").stdin("This is a secret.").stdout("ciphertext: haeTsristseic\n").exit(0)
 
 @check50.check(compiles)
@@ -42,4 +42,3 @@ def handles_invalid_length():
 def handles_invalid_key_chars():
     """handles invalid characters in key"""
     check50.run("./column abc1").exit(2)
-
