@@ -15,18 +15,18 @@ def compiles():
 @check50.check(compiles)
 def encrypt1():
     """encrypts "secretmessage" as "ctsgeeeasrmse" using key "one" """
-   check50.run("./column one").stdin("secretmessage").stdout("ciphertext: ctsgeeeasrmse\n").exit(0)
+    check50.run("./column one").stdin("secretmessage").stdout("ciphertext: ctsgeeeasrmse\n").exit(0)
 
 
 @check50.check(compiles)
 def encrypt2():
     """encrypts "This is a secret." as "" using key "hello" """
-   check50.run("./column hello").stdin("This is a secret.").stdout("ciphertext: haTstitseis\n").exit(0)
+    check50.run("./column hello").stdin("This is a secret.").stdout("ciphertext: haTstitseis\n").exit(0)
 
 @check50.check(compiles)
 def encrypt3():
     """encrypts "This is a secret." as "" using key "heLlo" """
-   check50.run("./column hello").stdin("This is a secret.").stdout("ciphertext: haTstitseis\n").exit(0)
+    check50.run("./column hello").stdin("This is a secret.").stdout("ciphertext: haTstitseis\n").exit(0)
 
 @check50.check(compiles)
 def handles_no_argv():
