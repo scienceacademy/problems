@@ -299,7 +299,7 @@ int main(int argc, char *argv[])
         case 1:
         {
             pixelate(3, 3, img2);
-            print_pixel(img2[0][1]);
+            print_image(3, 3, img2);
             break;
         }
         case 2:
