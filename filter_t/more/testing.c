@@ -8,6 +8,8 @@
 #define REFLECT 2
 #define BLUR 3
 #define EDGES 4
+#define PIXELATE 5
+#define VIGNETTE 6
 
 RGBTRIPLE pixel(int r, int g, int b);
 void print_pixel(RGBTRIPLE p);
@@ -26,7 +28,8 @@ int main(int argc, char *argv[])
 
     // Image with three rows of solid colors
     RGBTRIPLE img1[3][3];
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++)
+    {
         img1[0][i] = pixel(0xff, 0, 0);
         img1[1][i] = pixel(0, 0xff, 0);
         img1[2][i] = pixel(0, 0, 0xff);
@@ -104,179 +107,201 @@ int main(int argc, char *argv[])
     row3[0][1] = pixel(0, 255, 0);
     row3[0][2] = pixel(0, 0, 255);
 
-    if (function == GRAYSCALE) {
+    if (function == GRAYSCALE)
+    {
         switch (test)
         {
-            case 0:
-            {
-                RGBTRIPLE img[1][1];
-                img[0][0] = pixel(20, 40, 90);
-                grayscale(1, 1, img);
-                print_image(1, 1, img);
-                break;
-            }
+        case 0:
+        {
+            RGBTRIPLE img[1][1];
+            img[0][0] = pixel(20, 40, 90);
+            grayscale(1, 1, img);
+            print_image(1, 1, img);
+            break;
+        }
 
-            case 1:
-            {
-                RGBTRIPLE img[1][1];
-                img[0][0] = pixel(27, 28, 28);
-                grayscale(1, 1, img);
-                print_image(1, 1, img);
-                break;
-            }
+        case 1:
+        {
+            RGBTRIPLE img[1][1];
+            img[0][0] = pixel(27, 28, 28);
+            grayscale(1, 1, img);
+            print_image(1, 1, img);
+            break;
+        }
 
-            case 2:
-            {
-                RGBTRIPLE img[1][1];
-                img[0][0] = pixel(50, 50, 50);
-                grayscale(1, 1, img);
-                print_image(1, 1, img);
-                break;
-            }
+        case 2:
+        {
+            RGBTRIPLE img[1][1];
+            img[0][0] = pixel(50, 50, 50);
+            grayscale(1, 1, img);
+            print_image(1, 1, img);
+            break;
+        }
 
-            case 3:
-            {
-                grayscale(3, 3, img1);
-                print_image(3, 3, img1);
-                break;
-            }
+        case 3:
+        {
+            grayscale(3, 3, img1);
+            print_image(3, 3, img1);
+            break;
+        }
 
-            case 4:
-            {
-                grayscale(3, 3, img2);
-                print_image(3, 3, img2);
-                break;
-            }
+        case 4:
+        {
+            grayscale(3, 3, img2);
+            print_image(3, 3, img2);
+            break;
+        }
 
-            case 5:
-            {
-                grayscale(4, 4, img3);
-                print_image(4, 4, img3);
-                break;
-            }
+        case 5:
+        {
+            grayscale(4, 4, img3);
+            print_image(4, 4, img3);
+            break;
+        }
         }
     }
 
-    else if (function == REFLECT) {
+    else if (function == REFLECT)
+    {
         switch (test)
         {
-            case 0:
-            {
-                reflect(1, 2, row2);
-                print_image(1, 2, row2);
-                break;
-            }
+        case 0:
+        {
+            reflect(1, 2, row2);
+            print_image(1, 2, row2);
+            break;
+        }
 
-            case 1:
-            {
-                reflect(1, 3, row3);
-                print_image(1, 3, row3);
-                break;
-            }
+        case 1:
+        {
+            reflect(1, 3, row3);
+            print_image(1, 3, row3);
+            break;
+        }
 
-            case 2:
-            {
-                reflect(3, 3, img1);
-                print_image(3, 3, img1);
-                break;
-            }
+        case 2:
+        {
+            reflect(3, 3, img1);
+            print_image(3, 3, img1);
+            break;
+        }
 
-            case 3:
-            {
-                reflect(3, 3, img2);
-                print_image(3, 3, img2);
-                break;
-            }
+        case 3:
+        {
+            reflect(3, 3, img2);
+            print_image(3, 3, img2);
+            break;
+        }
 
-            case 4:
-            {
-                reflect(4, 4, img3);
-                print_image(4, 4, img3);
-                break;
-            }
+        case 4:
+        {
+            reflect(4, 4, img3);
+            print_image(4, 4, img3);
+            break;
+        }
         }
     }
 
-    else if (function == BLUR) {
+    else if (function == BLUR)
+    {
         switch (test)
         {
-            case 0:
-            {
-                blur(3, 3, img2);
-                print_pixel(img2[1][1]);
-                break;
-            }
+        case 0:
+        {
+            blur(3, 3, img2);
+            print_pixel(img2[1][1]);
+            break;
+        }
 
-            case 1:
-            {
-                blur(3, 3, img2);
-                print_pixel(img2[0][1]);
-                break;
-            }
+        case 1:
+        {
+            blur(3, 3, img2);
+            print_pixel(img2[0][1]);
+            break;
+        }
 
-            case 2:
-            {
-                blur(3, 3, img2);
-                print_pixel(img2[0][0]);
-                break;
-            }
+        case 2:
+        {
+            blur(3, 3, img2);
+            print_pixel(img2[0][0]);
+            break;
+        }
 
-            case 3:
-            {
-                blur(3, 3, img2);
-                print_image(3, 3, img2);
-                break;
-            }
+        case 3:
+        {
+            blur(3, 3, img2);
+            print_image(3, 3, img2);
+            break;
+        }
 
-            case 4:
-            {
-                blur(4, 4, img3);
-                print_image(4, 4, img3);
-                break;
-            }
+        case 4:
+        {
+            blur(4, 4, img3);
+            print_image(4, 4, img3);
+            break;
+        }
         }
     }
 
-    else if (function == EDGES) {
+    else if (function == EDGES)
+    {
         switch (test)
         {
-            case 0:
-            {
-                edges(3, 3, img4);
-                print_pixel(img4[1][1]);
-                break;
-            }
+        case 0:
+        {
+            edges(3, 3, img4);
+            print_pixel(img4[1][1]);
+            break;
+        }
 
-            case 1:
-            {
-                edges(3, 3, img4);
-                print_pixel(img4[0][1]);
-                break;
-            }
+        case 1:
+        {
+            edges(3, 3, img4);
+            print_pixel(img4[0][1]);
+            break;
+        }
 
-            case 2:
-            {
-                edges(3, 3, img4);
-                print_pixel(img4[0][0]);
-                break;
-            }
+        case 2:
+        {
+            edges(3, 3, img4);
+            print_pixel(img4[0][0]);
+            break;
+        }
 
-            case 3:
-            {
-                edges(3, 3, img4);
-                print_image(3, 3, img4);
-                break;
-            }
+        case 3:
+        {
+            edges(3, 3, img4);
+            print_image(3, 3, img4);
+            break;
+        }
 
-            case 4:
-            {
-                edges(4, 4, img5);
-                print_image(4, 4, img5);
-                break;
-            }
+        case 4:
+        {
+            edges(4, 4, img5);
+            print_image(4, 4, img5);
+            break;
+        }
         }
     }
 
+    else if (function == PIXELATE)
+    {
+        switch (test)
+        {
+        case 0:
+            RGBTRIPLE img[1][1];
+            img[0][0] = pixel(20, 40, 90);
+            pixelate(1, 1, img);
+            print_image(1, 1, img);
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        }
+    }
 }
 
 RGBTRIPLE pixel(int r, int g, int b)
@@ -299,4 +324,3 @@ void print_image(int rows, int cols, RGBTRIPLE img[rows][cols])
         for (int j = 0; j < cols; j++)
             print_pixel(img[i][j]);
 }
-
