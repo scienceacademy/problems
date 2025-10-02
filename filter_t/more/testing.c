@@ -289,17 +289,25 @@ int main(int argc, char *argv[])
         switch (test)
         {
         case 0:
+        {
             RGBTRIPLE img[1][1];
             img[0][0] = pixel(20, 40, 90);
             pixelate(1, 1, img);
             print_image(1, 1, img);
             break;
+        }
         case 1:
+        {
             break;
+        }
         case 2:
+        {
             break;
+        }
         case 3:
+        {
             break;
+        }
         }
     }
 }
