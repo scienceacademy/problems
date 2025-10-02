@@ -298,8 +298,8 @@ int main(int argc, char *argv[])
         }
         case 1:
         {
-            pixelate(3, 3, img4);
-            print_pixel(img4[0][1]);
+            pixelate(3, 3, img2);
+            print_pixel(img2[0][1]);
             break;
         }
         case 2:
