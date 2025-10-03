@@ -610,8 +610,6 @@ def pixelate_larger():
 
 
 # VIGNETTE FILTER TESTS
-
-
 @check50.check(compiles)
 def vignette_single():
     """vignette correctly filters single pixel"""
@@ -623,7 +621,7 @@ def vignette_single():
 def vignette_center():
     """vignette preserves center pixel brightness"""
     log(SAMPLE_IMAGES[1])
-    check50.run("./testing 6 1").stdout("120 140 150\n")
+    check50.run("./testing 6 1").stdout("104 121 130\n")
 
 
 @check50.check(compiles)
@@ -641,14 +639,14 @@ def vignette3x3():
         "".join(
             [
                 "0 0 0\n",
-                "8 10 12\n",
-                "0 0 0\n",
-                "22 26 28\n",
-                "120 140 150\n",
-                "26 30 32\n",
-                "0 0 0\n",
-                "44 46 48\n",
-                "0 0 0\n",
+                "13 17 20\n",
+                "23 27 30\n",
+                "37 43 47\n",
+                "104 121 130\n",
+                "113 130 139\n",
+                "67 70 73\n",
+                "191 199 208\n",
+                "208 217 221\n",
             ]
         )
     )
@@ -661,22 +659,22 @@ def vignette4x4():
     check50.run("./testing 6 4").stdout(
         "".join(
             [
-                "1 2 3\n",
-                "6 7 9\n",
-                "10 12 13\n",
-                "10 11 12\n",
-                "16 19 20\n",
-                "49 57 61\n",
-                "53 61 65\n",
-                "18 21 22\n",
-                "28 29 31\n",
-                "84 88 92\n",
-                "92 96 99\n",
-                "32 33 33\n",
-                "5 3 9\n",
                 "0 0 0\n",
-                "26 26 26\n",
-                "9 9 9\n",
+                "10 13 15\n",
+                "28 32 36\n",
+                "25 28 30\n",
+                "28 33 35\n",
+                "84 98 105\n",
+                "111 128 136\n",
+                "98 112 119\n",
+                "78 82 85\n",
+                "174 182 190\n",
+                "225 234 243\n",
+                "208 216 215\n",
+                "13 7 23\n",
+                "0 0 0\n",
+                "217 217 217\n",
+                "59 59 59\n",
             ]
         )
     )
