@@ -109,6 +109,10 @@ int main(int argc, char *argv[])
 
     // load larger grid
     FILE *inptr = fopen("colorgrid.bmp", "r");
+    if (inptr == NULL)
+    {
+        return 4;
+    }
     // // Read infile's BITMAPFILEHEADER
     // BITMAPFILEHEADER bf;
     // fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
