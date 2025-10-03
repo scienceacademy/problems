@@ -107,15 +107,15 @@ int main(int argc, char *argv[])
     row3[0][1] = pixel(0, 255, 0);
     row3[0][2] = pixel(0, 0, 255);
 
-    // // load larger grid
-    // FILE *inptr = fopen("colorgrid.bmp", "r");
-    // // Read infile's BITMAPFILEHEADER
-    // BITMAPFILEHEADER bf;
-    // fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
+    // load larger grid
+    FILE *inptr = fopen("colorgrid.bmp", "r");
+    // Read infile's BITMAPFILEHEADER
+    BITMAPFILEHEADER bf;
+    fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
 
-    // // Read infile's BITMAPINFOHEADER
-    // BITMAPINFOHEADER bi;
-    // fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
+    // Read infile's BITMAPINFOHEADER
+    BITMAPINFOHEADER bi;
+    fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
 
     // // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
     // if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 || bi.biBitCount != 24 ||
