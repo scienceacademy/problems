@@ -107,50 +107,50 @@ int main(int argc, char *argv[])
     row3[0][1] = pixel(0, 255, 0);
     row3[0][2] = pixel(0, 0, 255);
 
-    // load larger grid
-    FILE *inptr = fopen("colorgrid.bmp", "r");
-    // Read infile's BITMAPFILEHEADER
-    BITMAPFILEHEADER bf;
-    fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
+    // // load larger grid
+    // FILE *inptr = fopen("colorgrid.bmp", "r");
+    // // Read infile's BITMAPFILEHEADER
+    // BITMAPFILEHEADER bf;
+    // fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
 
-    // Read infile's BITMAPINFOHEADER
-    BITMAPINFOHEADER bi;
-    fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
+    // // Read infile's BITMAPINFOHEADER
+    // BITMAPINFOHEADER bi;
+    // fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
 
-    // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
-    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 || bi.biBitCount != 24 ||
-        bi.biCompression != 0)
-    {
-        fclose(inptr);
-        printf("Unsupported file format.\n");
-        return 6;
-    }
+    // // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
+    // if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 || bi.biBitCount != 24 ||
+    //     bi.biCompression != 0)
+    // {
+    //     fclose(inptr);
+    //     printf("Unsupported file format.\n");
+    //     return 6;
+    // }
 
-    // Get image's dimensions
-    int gridheight = abs(bi.biHeight);
-    int gridwidth = bi.biWidth;
+    // // Get image's dimensions
+    // int gridheight = abs(bi.biHeight);
+    // int gridwidth = bi.biWidth;
 
-    // Allocate memory for image
-    RGBTRIPLE(*colorgrid)
-    [width] = calloc(gridheight, gridwidth * sizeof(RGBTRIPLE));
-    if (image == NULL)
-    {
-        printf("Not enough memory to store image.\n");
-        fclose(inptr);
-        return 7;
-    }
-    // Determine padding for scanlines
-    int padding = (4 - (gridwidth * sizeof(RGBTRIPLE)) % 4) % 4;
+    // // Allocate memory for image
+    // RGBTRIPLE(*colorgrid)
+    // [width] = calloc(gridheight, gridwidth * sizeof(RGBTRIPLE));
+    // if (image == NULL)
+    // {
+    //     printf("Not enough memory to store image.\n");
+    //     fclose(inptr);
+    //     return 7;
+    // }
+    // // Determine padding for scanlines
+    // int padding = (4 - (gridwidth * sizeof(RGBTRIPLE)) % 4) % 4;
 
-    // Iterate over infile's scanlines
-    for (int i = 0; i < gridheight; i++)
-    {
-        // Read row into pixel array
-        fread(colorgrid[i], sizeof(RGBTRIPLE), gridwidth, inptr);
+    // // Iterate over infile's scanlines
+    // for (int i = 0; i < gridheight; i++)
+    // {
+    //     // Read row into pixel array
+    //     fread(colorgrid[i], sizeof(RGBTRIPLE), gridwidth, inptr);
 
-        // Skip over padding
-        fseek(inptr, padding, SEEK_CUR);
-    }
+    //     // Skip over padding
+    //     fseek(inptr, padding, SEEK_CUR);
+    // }
 
     if (function == GRAYSCALE)
     {
@@ -355,8 +355,8 @@ int main(int argc, char *argv[])
         }
         case 3:
         {
-            pixelate(gridheight, gridwidth, colorgrid);
-            print_image(gridheight, gridwidth, colorgrid);
+            // pixelate(gridheight, gridwidth, colorgrid);
+            // print_image(gridheight, gridwidth, colorgrid);
             break;
         }
         }
