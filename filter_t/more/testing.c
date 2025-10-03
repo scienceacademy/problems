@@ -350,6 +350,45 @@ int main(int argc, char *argv[])
         }
         }
     }
+
+    else if (function == VIGNETTE)
+    {
+        switch (test)
+        {
+        case 0:
+        {
+            RGBTRIPLE img[1][1];
+            img[0][0] = pixel(100, 100, 100);
+            vignette(1, 1, img);
+            print_image(1, 1, img);
+            break;
+        }
+        case 1:
+        {
+            vignette(3, 3, img2);
+            print_pixel(img2[1][1]);
+            break;
+        }
+        case 2:
+        {
+            vignette(3, 3, img2);
+            print_pixel(img2[0][0]);
+            break;
+        }
+        case 3:
+        {
+            vignette(3, 3, img2);
+            print_image(3, 3, img2);
+            break;
+        }
+        case 4:
+        {
+            vignette(4, 4, img3);
+            print_image(4, 4, img3);
+            break;
+        }
+        }
+    }
 }
 
 RGBTRIPLE pixel(int r, int g, int b)

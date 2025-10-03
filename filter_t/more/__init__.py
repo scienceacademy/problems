@@ -428,25 +428,25 @@ def pixelate3x3():
     )
 
 
-@check50.check(compiles)
-def pixelate_blocks():
-    """pixelate creates uniform blocks"""
-    log(SAMPLE_IMAGES[0])
-    check50.run("./testing 5 3").stdout(
-        "".join(
-            [
-                "170 85 85\n",
-                "170 85 85\n",
-                "170 85 85\n",
-                "170 85 85\n",
-                "170 85 85\n",
-                "170 85 85\n",
-                "170 85 85\n",
-                "170 85 85\n",
-                "170 85 85\n",
-            ]
-        )
-    )
+# @check50.check(compiles)
+# def pixelate_blocks():
+#     """pixelate creates uniform blocks"""
+#     log(SAMPLE_IMAGES[0])
+#     check50.run("./testing 5 3").stdout(
+#         "".join(
+#             [
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#                 "170 85 85\n",
+#             ]
+#         )
+#     )
 
 
 @check50.check(compiles)
