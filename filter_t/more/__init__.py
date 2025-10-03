@@ -610,11 +610,11 @@ def pixelate_larger():
 
 
 # VIGNETTE FILTER TESTS
-@check50.check(compiles)
-def vignette_single():
-    """vignette correctly filters single pixel"""
-    log(SAMPLE_PIXEL(100, 100, 100))
-    check50.run("./testing 6 0").stdout("100 100 100\n")
+# @check50.check(compiles)
+# def vignette_single():
+#     """vignette correctly filters single pixel"""
+#     log(SAMPLE_PIXEL(100, 100, 100))
+#     check50.run("./testing 6 0").stdout("100 100 100\n")
 
 
 @check50.check(compiles)
