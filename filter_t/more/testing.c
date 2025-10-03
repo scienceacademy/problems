@@ -107,54 +107,33 @@ int main(int argc, char *argv[])
     row3[0][1] = pixel(0, 255, 0);
     row3[0][2] = pixel(0, 0, 255);
 
-    // load larger grid
-    FILE *inptr = fopen("colorgrid.bmp", "r");
-    if (inptr == NULL)
+    // 12x12 image for pixelate test
+    RGBTRIPLE img12x12[12][12];
+    // First 10 rows, first 10 columns: red gradient (100-190)
+    for (int i = 0; i < 10; i++)
     {
-        return 4;
+        for (int j = 0; j < 10; j++)
+        {
+            img12x12[i][j] = pixel(100 + i * 10, 0, 0);
+        }
     }
-    // // Read infile's BITMAPFILEHEADER
-    // BITMAPFILEHEADER bf;
-    // fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
-
-    // // Read infile's BITMAPINFOHEADER
-    // BITMAPINFOHEADER bi;
-    // fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
-
-    // // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
-    // if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 || bi.biBitCount != 24 ||
-    //     bi.biCompression != 0)
-    // {
-    //     fclose(inptr);
-    //     printf("Unsupported file format.\n");
-    //     return 6;
-    // }
-
-    // // Get image's dimensions
-    // int gridheight = abs(bi.biHeight);
-    // int gridwidth = bi.biWidth;
-
-    // // Allocate memory for image
-    // RGBTRIPLE(*colorgrid)
-    // [width] = calloc(gridheight, gridwidth * sizeof(RGBTRIPLE));
-    // if (image == NULL)
-    // {
-    //     printf("Not enough memory to store image.\n");
-    //     fclose(inptr);
-    //     return 7;
-    // }
-    // // Determine padding for scanlines
-    // int padding = (4 - (gridwidth * sizeof(RGBTRIPLE)) % 4) % 4;
-
-    // // Iterate over infile's scanlines
-    // for (int i = 0; i < gridheight; i++)
-    // {
-    //     // Read row into pixel array
-    //     fread(colorgrid[i], sizeof(RGBTRIPLE), gridwidth, inptr);
-
-    //     // Skip over padding
-    //     fseek(inptr, padding, SEEK_CUR);
-    // }
+    // First 10 rows, last 2 columns: green gradient (100-190)
+    for (int i = 0; i < 10; i++)
+    {
+        img12x12[i][10] = pixel(0, 100 + i * 10, 0);
+        img12x12[i][11] = pixel(0, 100 + i * 10, 0);
+    }
+    // Last 2 rows, first 10 columns: blue (100, 200)
+    for (int j = 0; j < 10; j++)
+    {
+        img12x12[10][j] = pixel(0, 0, 100);
+        img12x12[11][j] = pixel(0, 0, 200);
+    }
+    // Last 2 rows, last 2 columns: gray (50, 100)
+    img12x12[10][10] = pixel(50, 50, 50);
+    img12x12[10][11] = pixel(50, 50, 50);
+    img12x12[11][10] = pixel(100, 100, 100);
+    img12x12[11][11] = pixel(100, 100, 100);
 
     if (function == GRAYSCALE)
     {
@@ -359,8 +338,14 @@ int main(int argc, char *argv[])
         }
         case 3:
         {
-            // pixelate(gridheight, gridwidth, colorgrid);
-            // print_image(gridheight, gridwidth, colorgrid);
+            pixelate(3, 3, img1);
+            print_image(3, 3, img1);
+            break;
+        }
+        case 4:
+        {
+            pixelate(12, 12, img12x12);
+            print_image(12, 12, img12x12);
             break;
         }
         }
