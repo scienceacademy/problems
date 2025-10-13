@@ -4,10 +4,16 @@
 void grayscale(int height, int width, RGBTRIPLE image[height][width]);
 
 // Reflect image horizontally
-void reflect(int height, int width, RGBTRIPLE image[height][width]);
+// void reflect(int height, int width, RGBTRIPLE image[height][width]);
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width]);
 
 // Blur image
-void blur(int height, int width, RGBTRIPLE image[height][width]);
+// void blur(int height, int width, RGBTRIPLE image[height][width]);
+
+// Pixelate image
+void pixelate(int height, int width, RGBTRIPLE image[height][width]);
+
+// Vignette image
+void vignette(int height, int width, RGBTRIPLE image[height][width]);
