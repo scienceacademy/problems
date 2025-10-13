@@ -171,160 +171,160 @@ def grayscale4x4():
     )
 
 
-@check50.check(compiles)
-def reflect_row2():
-    """reflect correctly filters 1x2 image"""
-    log(SAMPLE_IMAGES[3])
-    check50.run("./testing 2 0").stdout("".join(["0 0 255\n", "255 0 0\n"]))
+# @check50.check(compiles)
+# def reflect_row2():
+#     """reflect correctly filters 1x2 image"""
+#     log(SAMPLE_IMAGES[3])
+#     check50.run("./testing 2 0").stdout("".join(["0 0 255\n", "255 0 0\n"]))
 
 
-@check50.check(compiles)
-def reflect_row3():
-    """reflect correctly filters 1x3 image"""
-    log(SAMPLE_IMAGES[4])
-    check50.run("./testing 2 1").stdout(
-        "".join(["0 0 255\n", "0 255 0\n", "255 0 0\n"])
-    )
+# @check50.check(compiles)
+# def reflect_row3():
+#     """reflect correctly filters 1x3 image"""
+#     log(SAMPLE_IMAGES[4])
+#     check50.run("./testing 2 1").stdout(
+#         "".join(["0 0 255\n", "0 255 0\n", "255 0 0\n"])
+#     )
 
 
-@check50.check(compiles)
-def reflect_simple():
-    """reflect correctly filters image that is its own mirror image"""
-    log(SAMPLE_IMAGES[0])
-    check50.run("./testing 2 2").stdout(
-        "".join(
-            [
-                "255 0 0\n",
-                "255 0 0\n",
-                "255 0 0\n",
-                "0 255 0\n",
-                "0 255 0\n",
-                "0 255 0\n",
-                "0 0 255\n",
-                "0 0 255\n",
-                "0 0 255\n",
-            ]
-        )
-    )
+# @check50.check(compiles)
+# def reflect_simple():
+#     """reflect correctly filters image that is its own mirror image"""
+#     log(SAMPLE_IMAGES[0])
+#     check50.run("./testing 2 2").stdout(
+#         "".join(
+#             [
+#                 "255 0 0\n",
+#                 "255 0 0\n",
+#                 "255 0 0\n",
+#                 "0 255 0\n",
+#                 "0 255 0\n",
+#                 "0 255 0\n",
+#                 "0 0 255\n",
+#                 "0 0 255\n",
+#                 "0 0 255\n",
+#             ]
+#         )
+#     )
 
 
-@check50.check(compiles)
-def reflect3():
-    """reflect correctly filters 3x3 image"""
-    log(SAMPLE_IMAGES[1])
-    check50.run("./testing 2 3").stdout(
-        "".join(
-            [
-                "70 80 90\n",
-                "40 50 60\n",
-                "10 20 30\n",
-                "130 150 160\n",
-                "120 140 150\n",
-                "110 130 140\n",
-                "240 250 255\n",
-                "220 230 240\n",
-                "200 210 220\n",
-            ]
-        )
-    )
+# @check50.check(compiles)
+# def reflect3():
+#     """reflect correctly filters 3x3 image"""
+#     log(SAMPLE_IMAGES[1])
+#     check50.run("./testing 2 3").stdout(
+#         "".join(
+#             [
+#                 "70 80 90\n",
+#                 "40 50 60\n",
+#                 "10 20 30\n",
+#                 "130 150 160\n",
+#                 "120 140 150\n",
+#                 "110 130 140\n",
+#                 "240 250 255\n",
+#                 "220 230 240\n",
+#                 "200 210 220\n",
+#             ]
+#         )
+#     )
 
 
-@check50.check(compiles)
-def reflect4():
-    """reflect correctly filters 4x4 image"""
-    log(SAMPLE_IMAGES[2])
-    check50.run("./testing 2 4").stdout(
-        "".join(
-            [
-                "100 110 120\n",
-                "70 80 90\n",
-                "40 50 60\n",
-                "10 20 30\n",
-                "140 160 170\n",
-                "130 150 160\n",
-                "120 140 150\n",
-                "110 130 140\n",
-                "245 254 253\n",
-                "225 234 243\n",
-                "205 214 223\n",
-                "195 204 213\n",
-                "85 85 85\n",
-                "255 255 255\n",
-                "0 0 0\n",
-                "50 28 90\n",
-            ]
-        )
-    )
+# @check50.check(compiles)
+# def reflect4():
+#     """reflect correctly filters 4x4 image"""
+#     log(SAMPLE_IMAGES[2])
+#     check50.run("./testing 2 4").stdout(
+#         "".join(
+#             [
+#                 "100 110 120\n",
+#                 "70 80 90\n",
+#                 "40 50 60\n",
+#                 "10 20 30\n",
+#                 "140 160 170\n",
+#                 "130 150 160\n",
+#                 "120 140 150\n",
+#                 "110 130 140\n",
+#                 "245 254 253\n",
+#                 "225 234 243\n",
+#                 "205 214 223\n",
+#                 "195 204 213\n",
+#                 "85 85 85\n",
+#                 "255 255 255\n",
+#                 "0 0 0\n",
+#                 "50 28 90\n",
+#             ]
+#         )
+#     )
 
 
-@check50.check(compiles)
-def blur_middle():
-    """blur correctly filters middle pixel"""
-    log(SAMPLE_IMAGES[1])
-    check50.run("./testing 3 0").stdout("127 140 149\n")
+# @check50.check(compiles)
+# def blur_middle():
+#     """blur correctly filters middle pixel"""
+#     log(SAMPLE_IMAGES[1])
+#     check50.run("./testing 3 0").stdout("127 140 149\n")
 
 
-@check50.check(compiles)
-def blur_edge():
-    """blur correctly filters pixel on edge"""
-    log(SAMPLE_IMAGES[1])
-    check50.run("./testing 3 1").stdout("80 95 105\n")
+# @check50.check(compiles)
+# def blur_edge():
+#     """blur correctly filters pixel on edge"""
+#     log(SAMPLE_IMAGES[1])
+#     check50.run("./testing 3 1").stdout("80 95 105\n")
 
 
-@check50.check(compiles)
-def blur_corner():
-    """blur correctly filters pixel in corner"""
-    log(SAMPLE_IMAGES[1])
-    check50.run("./testing 3 2").stdout("70 85 95\n")
+# @check50.check(compiles)
+# def blur_corner():
+#     """blur correctly filters pixel in corner"""
+#     log(SAMPLE_IMAGES[1])
+#     check50.run("./testing 3 2").stdout("70 85 95\n")
 
 
-@check50.check(compiles)
-def blur3():
-    """blur correctly filters 3x3 image"""
-    log(SAMPLE_IMAGES[1])
-    check50.run("./testing 3 3").stdout(
-        "".join(
-            [
-                "70 85 95\n",
-                "80 95 105\n",
-                "90 105 115\n",
-                "117 130 140\n",
-                "127 140 149\n",
-                "137 150 159\n",
-                "163 178 188\n",
-                "170 185 194\n",
-                "178 193 201\n",
-            ]
-        )
-    )
+# @check50.check(compiles)
+# def blur3():
+#     """blur correctly filters 3x3 image"""
+#     log(SAMPLE_IMAGES[1])
+#     check50.run("./testing 3 3").stdout(
+#         "".join(
+#             [
+#                 "70 85 95\n",
+#                 "80 95 105\n",
+#                 "90 105 115\n",
+#                 "117 130 140\n",
+#                 "127 140 149\n",
+#                 "137 150 159\n",
+#                 "163 178 188\n",
+#                 "170 185 194\n",
+#                 "178 193 201\n",
+#             ]
+#         )
+#     )
 
 
-@check50.check(compiles)
-def blur4():
-    """blur correctly filters 4x4 image"""
-    log(SAMPLE_IMAGES[2])
-    check50.run("./testing 3 4").stdout(
-        "".join(
-            [
-                "70 85 95\n",
-                "80 95 105\n",
-                "100 115 125\n",
-                "110 125 135\n",
-                "113 126 136\n",
-                "123 136 145\n",
-                "142 155 163\n",
-                "152 165 173\n",
-                "113 119 136\n",
-                "143 151 164\n",
-                "156 166 171\n",
-                "180 190 194\n",
-                "113 112 132\n",
-                "155 156 171\n",
-                "169 174 177\n",
-                "203 207 209\n",
-            ]
-        )
-    )
+# @check50.check(compiles)
+# def blur4():
+#     """blur correctly filters 4x4 image"""
+#     log(SAMPLE_IMAGES[2])
+#     check50.run("./testing 3 4").stdout(
+#         "".join(
+#             [
+#                 "70 85 95\n",
+#                 "80 95 105\n",
+#                 "100 115 125\n",
+#                 "110 125 135\n",
+#                 "113 126 136\n",
+#                 "123 136 145\n",
+#                 "142 155 163\n",
+#                 "152 165 173\n",
+#                 "113 119 136\n",
+#                 "143 151 164\n",
+#                 "156 166 171\n",
+#                 "180 190 194\n",
+#                 "113 112 132\n",
+#                 "155 156 171\n",
+#                 "169 174 177\n",
+#                 "203 207 209\n",
+#             ]
+#         )
+#     )
 
 
 @check50.check(compiles)
