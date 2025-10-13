@@ -189,87 +189,87 @@ int main(int argc, char *argv[])
         }
     }
 
-    else if (function == REFLECT)
-    {
-        switch (test)
-        {
-        case 0:
-        {
-            reflect(1, 2, row2);
-            print_image(1, 2, row2);
-            break;
-        }
+    // else if (function == REFLECT)
+    // {
+    //     switch (test)
+    //     {
+    //     case 0:
+    //     {
+    //         reflect(1, 2, row2);
+    //         print_image(1, 2, row2);
+    //         break;
+    //     }
 
-        case 1:
-        {
-            reflect(1, 3, row3);
-            print_image(1, 3, row3);
-            break;
-        }
+    //     case 1:
+    //     {
+    //         reflect(1, 3, row3);
+    //         print_image(1, 3, row3);
+    //         break;
+    //     }
 
-        case 2:
-        {
-            reflect(3, 3, img1);
-            print_image(3, 3, img1);
-            break;
-        }
+    //     case 2:
+    //     {
+    //         reflect(3, 3, img1);
+    //         print_image(3, 3, img1);
+    //         break;
+    //     }
 
-        case 3:
-        {
-            reflect(3, 3, img2);
-            print_image(3, 3, img2);
-            break;
-        }
+    //     case 3:
+    //     {
+    //         reflect(3, 3, img2);
+    //         print_image(3, 3, img2);
+    //         break;
+    //     }
 
-        case 4:
-        {
-            reflect(4, 4, img3);
-            print_image(4, 4, img3);
-            break;
-        }
-        }
-    }
+    //     case 4:
+    //     {
+    //         reflect(4, 4, img3);
+    //         print_image(4, 4, img3);
+    //         break;
+    //     }
+    //     }
+    // }
 
-    else if (function == BLUR)
-    {
-        switch (test)
-        {
-        case 0:
-        {
-            blur(3, 3, img2);
-            print_pixel(img2[1][1]);
-            break;
-        }
+    // else if (function == BLUR)
+    // {
+    //     switch (test)
+    //     {
+    //     case 0:
+    //     {
+    //         blur(3, 3, img2);
+    //         print_pixel(img2[1][1]);
+    //         break;
+    //     }
 
-        case 1:
-        {
-            blur(3, 3, img2);
-            print_pixel(img2[0][1]);
-            break;
-        }
+    //     case 1:
+    //     {
+    //         blur(3, 3, img2);
+    //         print_pixel(img2[0][1]);
+    //         break;
+    //     }
 
-        case 2:
-        {
-            blur(3, 3, img2);
-            print_pixel(img2[0][0]);
-            break;
-        }
+    //     case 2:
+    //     {
+    //         blur(3, 3, img2);
+    //         print_pixel(img2[0][0]);
+    //         break;
+    //     }
 
-        case 3:
-        {
-            blur(3, 3, img2);
-            print_image(3, 3, img2);
-            break;
-        }
+    //     case 3:
+    //     {
+    //         blur(3, 3, img2);
+    //         print_image(3, 3, img2);
+    //         break;
+    //     }
 
-        case 4:
-        {
-            blur(4, 4, img3);
-            print_image(4, 4, img3);
-            break;
-        }
-        }
-    }
+    //     case 4:
+    //     {
+    //         blur(4, 4, img3);
+    //         print_image(4, 4, img3);
+    //         break;
+    //     }
+    //     }
+    // }
 
     else if (function == EDGES)
     {
