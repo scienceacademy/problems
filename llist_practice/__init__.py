@@ -15,4 +15,4 @@ def compiles():
 @check50.check(compiles)
 def reverse():
     """reverses list correctly"""
-    check50.run("./llist_practice").stdout("List: 8 -> 2 -> 3 -> 4 -> 1 -> 5 -> NULL").exit()
+    check50.run("./llist_practice").stdout("List: 5 -> 1 -> 4 -> 3 -> 2 -> 8 -> NULL").exit()
