@@ -1,6 +1,7 @@
 check50:
   files: &check50_files
     - !exclude "*"
+    - !exclude "*.py"
     - !require credit.py
 
 submit50:
