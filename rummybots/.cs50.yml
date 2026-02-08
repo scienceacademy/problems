@@ -1,0 +1,11 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !exclude "basic_bot.py"
+    - !exclude "random_bot.py"
+    - !exclude "intermediate_bot.py"
+    - !include "*_bot.py"
+
+submit50:
+  files: *check50_files
+  style: false
